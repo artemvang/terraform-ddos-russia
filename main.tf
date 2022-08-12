@@ -8,6 +8,7 @@ terraform {
 }
 
 provider "hcloud" {
+  token = var.hcloud_token
 }
 
 
@@ -188,7 +189,7 @@ resource "null_resource" "run_icmpflood" {
     ip_addr         = var.ip_addr
     ip_port         = var.ip_port
     private_ssh_key = local.private_ssh_key
-    restart = 1
+    restart         = 1
   }
   connection {
     host        = self.triggers.host_ip_addr
@@ -230,7 +231,7 @@ resource "null_resource" "run_db1000n" {
     ip_addr         = var.ip_addr
     ip_port         = var.ip_port
     private_ssh_key = local.private_ssh_key
-    restart = 1
+    restart         = 1
   }
   connection {
     host        = self.triggers.host_ip_addr

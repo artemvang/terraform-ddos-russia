@@ -1,5 +1,9 @@
+variable "hcloud_token" {
+  type = string
+}
+
 variable "instances_count" {
-  type    = number
+  type = number
 }
 
 variable "private_key_pem" {
@@ -30,7 +34,7 @@ variable "ip_addr" {
 }
 
 variable "ip_port" {
-  type        = string
+  type        = number
   description = "Target's ip port"
 }
 
